@@ -4,24 +4,6 @@
 #by penthium for Viperr
 #form original http://vsido.org/index.php?topic=757.0
 ############################################################ 
-## generate a hosts files with 5 web files.
-## New in version 2 : update the system hosts file with only new entry
-## you can unban directly in your /etc/hosts , during update your unban fqdn stay unban 
-############################################################
-## licence :
-#             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-#                    Version 2, December 2004
-#
-# Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
-#
-# Everyone is permitted to copy and distribute verbatim or modified
-# copies of this license document, and changing it is allowed as long
-# as the name is changed.
-#
-#            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-#   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-#
-#  0. You just DO WHAT THE FUCK YOU WANT TO.
 ############################################################
 
 
