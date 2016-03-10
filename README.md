@@ -1,4 +1,4 @@
-# Adkill - Kill Ads without navigator extension -
+# Adkill - Kill Ads without browser extension -
 - Version :2.0
 - Author : Penthium2
 - Release date : 03-12-2016
