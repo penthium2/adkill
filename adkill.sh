@@ -9,7 +9,7 @@
 
 ############################################################
 # Method for animation while script is working:
-# to call the function, use : spinner & ; pidspin=$(jobs -p) ; disown
+# to call it, use : spinner & ; pidspin=$(jobs -p) ; disown
 
 spinner() {
     local i sp n
