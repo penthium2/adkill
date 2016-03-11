@@ -2,14 +2,14 @@
 #adkill
 #version 2.0
 #by penthium for Viperr
-#form original http://vsido.org/index.php?topic=757.0
+#inspired by this script http://vsido.org/index.php?topic=757.0
 ############################################################ 
 ############################################################
 
 
 ############################################################
-#Fonction for animation during works:
-# to call the fonction use : spinner & ; pidspin=$(jobs -p) ; disown
+# Method for animation while script is working:
+# to call the function, use : spinner & ; pidspin=$(jobs -p) ; disown
 
 spinner() {
     local i sp n
@@ -20,7 +20,7 @@ spinner() {
         printf "%s\b" "${sp:i++%n:1}"
     done
 }
-# Fonction to kill the animation :
+# Method to kill the animation :
 killspinner() {
 kill $pidspin 
 printf "\n"
@@ -29,7 +29,7 @@ printf "\n"
 
 
 mkdir -p ~/.adkill
-# If this is our first run, save a copy of the system's original hosts file and set to read-only for safety
+# If this is our first run, saves a copy of the system's original hosts file and sets it to read-only for safety
 if [ ! -f ~/.adkill/hosts-system ]
 then
  echo "Saving copy of system's original hosts file..."
