@@ -7,7 +7,7 @@
 Inspired by original [hakerdefo] script.
 
 This script generates a powerful Hosts file for linux by merging 5 lists of advertisement references.
-
+More than 350 000 hosts Banned.
 # Usage :
 Just run the script or add some options :
 - --ats : activate blacklist of ad/tracking servers listed in the hpHosts database.
