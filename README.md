@@ -4,7 +4,7 @@
 - Release date : 03-12-2016
 - licence : GNU GPL V.3
 
-Inspired from original [hakerdefo] script.
+Inspired by original [hakerdefo] script.
 
 This script generates a powerful Hosts file for linux by merging 5 lists of advertisement references.
 
