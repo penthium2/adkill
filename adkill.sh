@@ -218,7 +218,7 @@ wget -nv -O - "http://downloads.sourceforge.net/project/adzhosts/FORADAWAY.txt" 
 donloadchecker
 
 
-read -p "STOP HERE"
+#read -p "STOP HERE"
 # Do some work on the file:
 printf "Parsing, cleaning, de-duplicating, sorting..."
 #sed -e 's/\r//' -e '/localhost/d' -e 's/127.0.0.1/0.0.0.0/' -e 's/#.*$//' -e 's/[ \s]*$//' -e '/^$/d' -e 's/\s/ /g' -e '/^[^0]/d' "$temphosts1" | sort -u > "$temphosts2"
