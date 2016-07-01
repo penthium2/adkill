@@ -1,6 +1,6 @@
 #!/bin/bash
 #adkill
-#version 2.1
+#version 2.2
 #by penthium for Viperr
 #inspired by this script http://vsido.org/index.php?topic=757.0
 ############################################################ 
