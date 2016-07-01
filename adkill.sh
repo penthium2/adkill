@@ -247,46 +247,41 @@ s/[ \s\t]*$//;\
 /^[^0]/d}" "$temphosts1" | sort -u > "$temphosts2"
 killspinner 
 
-
-# Combine system hosts with adblocks
-echo Merging with original system hosts...
+## work : 
+printf Merging with original system hosts...
+spinner &
+pidspin=$(jobs -p)
+disown
 # setting up progress status :
-count=0
-total=$( cat $temphosts2 | wc -l)
-##start=$(date +%s)
 ####
 
 ## work : 
+head=$(mktemp)
+unban=$(mktemp)
+
+## extract head
+#generation de l'entete :
+sed -n '0,/# Ad blocking hosts generated/p' /etc/hosts | sed '$d' > $head
+#generation du fichier des hosts commentés:
+sed -n '/#\(0\.\)\{3\}0/p' /etc/hosts > $unban
+#working :
+
 while read line
  do
-        if grep "$line" /etc/hosts > /dev/null
-        then
-                        echo "already blacklisted" > /dev/null
-        else
-                        echo "$line" >> $temphosts3
-        fi
-# visual progress :
-##  cur=`date +%s`
-  count=$(( $count + 1 ))
-##  runtime=$(( $cur-$start ))
-##  estremain=$(( ($runtime * $total / $count)-$runtime ))
-##  printf "\r%d.%d%% complete ($count of $total) - est %d:%0.2d remaining\e[K" $(( $count*100/$total )) $(( ($count*1000/$total)%10)) $(( $estremain/60 )) $(( $estremain%60 ))
-  printf "\r%d.%d%% complete ($count of $total) \e[K" $(( $count*100/$total )) $(( ($count*1000/$total)%10))
+        sed  -i "/${line#\#}/d" $temphosts2
 #################################
 
-done < <(cat $temphosts2)
-printf "\ndone\n"
+done < <(cat $unban)
+killspinner
 
 
 
-
-
-
-echo -e "# Ad blocking hosts generated: $(date +%d-%m-%Y)" | cat /etc/hosts - "$temphosts3" > ~/.adkill/hosts-block
+echo -e "# Ad blocking hosts generated: $(date +%d-%m-%Y)" | cat $head $unban - "$temphosts2" > ~/.adkill/hosts-block
 # Clean up temp files and remind user to copy new file
 echo "Cleaning up..."
-rm "$temphosts1" "$temphosts2" "$temphosts3"
+rm "$temphosts1" "$temphosts2" "$head" "$unban"
 echo "Done."
+
 #test if it's root user who launch the script :
 
 if [[ root = "$USER" ]] ; then
