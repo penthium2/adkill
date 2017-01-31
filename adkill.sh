@@ -25,7 +25,7 @@ kill $pidspin
 printf "\n"
 }
 ## download checker :
-donloadchecker() {
+downloadchecker() {
 if [[ $? = 0 ]] ; then
 	echo "Download completed"
 	else
@@ -139,83 +139,83 @@ temphosts3=$(mktemp)
 echo "Downloading ad-blocking hosts files..."
 echo "Downloading from : winhelp2002.mvps.org :"
 wget -nv -O - http://winhelp2002.mvps.org/hosts.txt >> "$temphosts1"
-donloadchecker
+downloadchecker
 echo "Downloading from hosts-file.net :"
 if [[ "$ats" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : ad/tracking servers"
 	wget -nv -O - http://hosts-file.net/ad_servers.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$emd" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : malware sites"
 	wget -nv -O - http://hosts-file.net/emd.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$exp" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : exploit sites"
 	wget -nv -O - http://hosts-file.net/exp.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$fsa" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : fraud sites"
 	wget -nv -O - http://hosts-file.net/fsa.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$grm" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : sites involved in spam"
 	wget -nv -O - http://hosts-file.net/grm.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$hfs" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : sites spamming the hpHosts forums"
 	wget -nv -O - http://hosts-file.net/hfs.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$hjk" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : hijack sites"
 	wget -nv -O - http://hosts-file.net/hjk.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$mmt" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : sites involved in misleading marketing"
 	wget -nv -O - http://hosts-file.net/mmt.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$pha" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : illegal pharmacy sites"
 	wget -nv -O - http://hosts-file.net/pha.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$phs" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : phishing sites"
 	wget -nv -O - http://hosts-file.net/psh.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 if [[ "$wrz" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : warez/piracy"
 	wget -nv -O - http://hosts-file.net/wrz.txt >> "$temphosts1"
-	donloadchecker
+	downloadchecker
 fi
 echo "Downloading from someonewhocares.org :"
 wget -nv -O - http://someonewhocares.org/hosts/hosts >> "$temphosts1"
-donloadchecker
+downloadchecker
 echo "Downloading from pgl.yoyo.org :"
 wget -nv -O - "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext" >> "$temphosts1"
-donloadchecker
+downloadchecker
 echo "Downloading from downloads.sourceforge.net/project/adzhosts :"
 wget -nv -O - "http://downloads.sourceforge.net/project/adzhosts/FORADAWAY.txt"  >> "$temphosts1"
-donloadchecker
+downloadchecker
 
 
 #read -p "STOP HERE"
