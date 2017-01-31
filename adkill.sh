@@ -195,7 +195,7 @@ if [[ "$pha" = 1 ]]
 	wget -nv -O - http://hosts-file.net/pha.txt >> "$temphosts1"
 	downloadchecker
 fi
-if [[ "$phs" = 1 ]] 
+if [[ "$psh" = 1 ]] 
 	then
 	echo "Downloading from hosts-file.net : phishing sites"
 	wget -nv -O - http://hosts-file.net/psh.txt >> "$temphosts1"
