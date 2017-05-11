@@ -1,6 +1,6 @@
 #!/bin/bash
 #adkill
-#version 2.2
+#version 2.3
 #by penthium for Viperr
 #inspired by this script http://vsido.org/index.php?topic=757.0
 ############################################################ 
@@ -239,10 +239,10 @@ s/[ \s\t]*$//};\
 {:delete_empty-line;\
 /^$/d};\
 {:replace_muti_space_by_only_one;\
-s/\s/ /g};\
+s/[[:blank:]]\+/ /g};\
 {:replace_127.0.0.1_by_0.0.0.;\
 s/127\.0\.0\.1/0.0.0.0/};\
-s/[ \s\t]*$//;\
+s/[ \s\t]$//;\
 {:delete_line_who_not_start_by_zero;\
 /^[^0]/d}" "$temphosts1" | sort -u > "$temphosts2"
 killspinner 
