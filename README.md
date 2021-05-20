@@ -7,7 +7,7 @@
 Inspired by original [hakerdefo] script.
 
 This script generates a powerful Hosts file for linux by merging 5 lists of advertisement references.
-More than 100 000 hosts Banned.
+More than 3 000 000 hosts Banned.
 # Usage :
 Just run the script or add some options :
 
