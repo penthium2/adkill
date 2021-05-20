@@ -149,7 +149,7 @@ if [[ "$ats" = 1 ]]
 	wget -nv -O - https://blocklistproject.github.io/Lists/malware.txt >> "$temphosts1"
 	downloadchecker
 	echo -e "\e[1;32mDownloading AdGuard via githubusercontent.com : CNAME records trackers\e[0m"
-	wget -nv -O - https://blocklistproject.github.io/Lists/malware.txt >> "$temphosts1"
+	wget -nv -O - https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_disguised_trackers_justdomains.txt >> "$temphosts1"
 	downloadchecker
 fi
 if [[ "$abu" = 1 ]] 
